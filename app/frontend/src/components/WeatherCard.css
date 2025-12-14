@@ -1,0 +1,154 @@
+/* Weather Card Styles */
+.weather-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+  margin-bottom: 30px;
+}
+
+.weather-card.placeholder {
+  background: #f0f0f0;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.weather-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 20px;
+}
+
+.weather-city {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.weather-date {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.weather-icon {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.temperature-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.temperature {
+  display: flex;
+  align-items: flex-start;
+}
+
+.temp-value {
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.temp-unit {
+  font-size: 24px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.condition {
+  flex: 1;
+}
+
+.condition-text {
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.feels-like {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detail .label {
+  font-size: 12px;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.detail .value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .weather-card {
+    padding: 20px;
+  }
+
+  .weather-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .weather-icon {
+    align-self: flex-end;
+    width: 60px;
+    height: 60px;
+  }
+
+  .temperature-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .temp-value {
+    font-size: 48px;
+  }
+
+  .weather-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-details {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-city {
+    font-size: 20px;
+  }
+
+  .temp-value {
+    font-size: 40px;
+  }
+}
