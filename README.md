@@ -1,5 +1,7 @@
 # Weather Forecasting Web App – Performance Testing & Analysis
 
+[![CI Status](https://github.com/Abdullah631/Weather-App-with-Testing/actions/workflows/performance-tests.yml/badge.svg)](https://github.com/Abdullah631/Weather-App-with-Testing/actions/workflows/performance-tests.yml)
+
 **Semester Project: Software Quality Engineering (SQE)**
 
 ---
