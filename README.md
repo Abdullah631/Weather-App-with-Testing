@@ -212,7 +212,6 @@ GET  /api/health                     - Health check
 #### 1. Clone & Setup Environment
 
 ```bash
-cd projj1
 cp .env.example .env.local
 # Edit .env.local with your API keys and database connection
 ```
@@ -471,9 +470,9 @@ Open documentation files in `/docs/` for complete analysis.
 
 ## 👤 Author
 
-**Student Name**: [Your Name]  
+**Student Roll No**: BSEF22M505, BSEF22M546   
 **Course**: Software Quality Engineering  
-**Semester**: [Current Semester]  
+**Semester**: 7th
 **Date**: December 2025
 
 ---
