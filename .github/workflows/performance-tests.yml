@@ -40,12 +40,12 @@ jobs:
     - name: Install Backend Dependencies
       run: |
         cd app/backend
-        if [ -f package-lock.json ]; then npm ci; else npm install; fi
+        npm install
         
     - name: Install Frontend Dependencies  
       run: |
         cd app/frontend
-        if [ -f package-lock.json ]; then npm ci; else npm install; fi
+        npm install
 
     - name: Run Backend Linting
       run: |
@@ -87,7 +87,7 @@ jobs:
     - name: Install Dependencies
       run: |
         cd app/backend
-        if [ -f package-lock.json ]; then npm ci; else npm install; fi
+        npm install
 
     - name: Start Backend Server
       env:
@@ -125,7 +125,7 @@ jobs:
 
     - name: Upload JMeter Results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: jmeter-results
         path: tests/jmeter/reports/
@@ -155,12 +155,11 @@ jobs:
         npm audit --audit-level=moderate || true
 
     - name: Check for Secrets
-      uses: trufflesecurity/trufflehog@main
+      if: ${{ github.event_name != 'push' || github.ref != format('refs/heads/{0}', github.event.repository.default_branch) }}
+      uses: trufflesecurity/trufflehog@v3
       with:
         path: ./
-        base: ${{ github.event.repository.default_branch }}
-        head: HEAD
-        extra_args: --debug
+        extra_args: --debug --no-update
 
   code-quality:
     name: Code Quality Check
@@ -228,7 +227,7 @@ jobs:
 
     steps:
     - name: Download Artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       if: always()
 
     - name: Create Report Summary
