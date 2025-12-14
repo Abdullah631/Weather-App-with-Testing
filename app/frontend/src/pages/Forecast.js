@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { getForecast } from '../services/weatherService';
 import SearchBar from '../components/SearchBar';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { formatDate, formatTime, getWeatherIcon, formatTemp } from '../utils/helpers';
+import { formatTime, getWeatherIcon, formatTemp } from '../utils/helpers';
 import '../styles/App.css';
 
 const Forecast = () => {
