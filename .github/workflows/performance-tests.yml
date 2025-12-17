@@ -111,15 +111,28 @@ jobs:
         WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
       run: |
         mkdir -p tests/jmeter/reports
+        echo "Starting JMeter load test..."
         jmeter -n -t tests/jmeter/load_test.jmx \
           -l tests/jmeter/reports/load_test.jtl \
-          -j tests/jmeter/reports/load_test.log || true
+          -j tests/jmeter/reports/load_test.log
+        if [ -f tests/jmeter/reports/load_test.jtl ]; then
+          echo "✅ JMeter results file created successfully"
+        else
+          echo "⚠️ Warning: JMeter results file not found. Test may have failed or timed out."
+        fi
 
     - name: Generate JMeter Report
       if: always()
       run: |
-        jmeter -g tests/jmeter/reports/load_test.jtl \
-          -o tests/jmeter/reports/load_test_html
+        if [ -f tests/jmeter/reports/load_test.jtl ]; then
+          echo "Generating JMeter report..."
+          jmeter -g tests/jmeter/reports/load_test.jtl \
+            -o tests/jmeter/reports/load_test_html || echo "⚠️ Report generation had issues, but continuing..."
+        else
+          echo "⚠️ Skipping report generation: no JMeter results file found"
+          mkdir -p tests/jmeter/reports/load_test_html
+          echo "No test results available" > tests/jmeter/reports/load_test_html/index.html
+        fi
 
     - name: Upload JMeter Results
       if: always()
