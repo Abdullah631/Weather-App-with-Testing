@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="container">
         <div className="nav-wrapper">
           <Link to="/" className="nav-logo">
-            🌤️ Weather Forecast
+            🌤️ Weather Forecast       
           </Link>
           
           <div className={`nav-menu ${isOpen ? 'active' : ''}`}>

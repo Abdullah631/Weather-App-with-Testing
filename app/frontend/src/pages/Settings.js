@@ -71,34 +71,6 @@ const Settings = () => {
               </label>
             </div>
           </div>
-
-          {/* Theme Setting */}
-          <div className="card">
-            <h3 style={{ marginBottom: '15px', color: '#667eea' }}>🎨 Theme</h3>
-            <div style={{ display: 'flex', gap: '15px' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="theme"
-                  value="light"
-                  checked={settings.theme === 'light'}
-                  onChange={(e) => handleSettingChange('theme', e.target.value)}
-                />
-                Light Mode ☀️
-              </label>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="theme"
-                  value="dark"
-                  checked={settings.theme === 'dark'}
-                  onChange={(e) => handleSettingChange('theme', e.target.value)}
-                />
-                Dark Mode 🌙
-              </label>
-            </div>
-          </div>
-
           {/* Notifications Setting */}
           <div className="card">
             <h3 style={{ marginBottom: '15px', color: '#667eea' }}>🔔 Notifications</h3>
@@ -115,21 +87,7 @@ const Settings = () => {
             </p>
           </div>
 
-          {/* Language Setting */}
-          <div className="card">
-            <h3 style={{ marginBottom: '15px', color: '#667eea' }}>🌍 Language</h3>
-            <select
-              value={settings.language}
-              onChange={(e) => handleSettingChange('language', e.target.value)}
-              className="form-control"
-            >
-              <option value="en">English</option>
-              <option value="es">Spanish</option>
-              <option value="fr">French</option>
-              <option value="de">German</option>
-              <option value="zh">Chinese</option>
-            </select>
-          </div>
+        
 
           {/* Account Info */}
           <div className="card">
