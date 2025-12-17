@@ -36,9 +36,8 @@
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">100</stringProp>
         <stringProp name="ThreadGroup.ramp_time">60</stringProp>
-        <elementProp name="ThreadGroup.duration_assertion" elementType="longProp">
-          <longProp name="ThreadGroup.duration">300000</longProp>
-        </elementProp>
+        <stringProp name="ThreadGroup.duration">300</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </ThreadGroup>
