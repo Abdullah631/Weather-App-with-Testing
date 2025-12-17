@@ -171,7 +171,7 @@
 
         <!-- Result Collectors -->
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
-          <elementProp name="ResultCollector.sample_listeners" elementType="resultCollector"/>
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
           <stringProp name="filename">tests/jmeter/reports/load_test.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
