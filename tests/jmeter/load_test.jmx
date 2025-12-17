@@ -171,38 +171,8 @@
 
         <!-- Result Collectors -->
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>samplerListener</name>
-            <value>true</value>
-          </objProp>
-          <elementProp name="fileConfigurer" elementType="ResultFileConfiguration" guiclass="ResultFileConfigPanel" testclass="ResultFileConfiguration" testname="ResultFileConfiguration" enabled="true">
-            <stringProp name="ResultFileConfiguration.filename">tests/jmeter/reports/load_test.jtl</stringProp>
-            <boolProp name="ResultFileConfiguration.errorsOnly">false</boolProp>
-            <boolProp name="ResultFileConfiguration.successOnly">false</boolProp>
-            <boolProp name="ResultFileConfiguration.allThreads">false</boolProp>
-            <stringProp name="ResultFileConfiguration.timeStamp">true</stringProp>
-            <stringProp name="ResultFileConfiguration.connect">true</stringProp>
-            <stringProp name="ResultFileConfiguration.latency">true</stringProp>
-            <stringProp name="ResultFileConfiguration.encoding"></stringProp>
-            <stringProp name="ResultFileConfiguration.fileFormat">xml</stringProp>
-            <stringProp name="ResultFileConfiguration.autoFlush">true</boolProp>
-            <boolProp name="ResultFileConfiguration.samplerData">false</boolProp>
-            <boolProp name="ResultFileConfiguration.responseData">false</boolProp>
-            <boolProp name="ResultFileConfiguration.requestHeaders">false</boolProp>
-            <boolProp name="ResultFileConfiguration.responseHeaders">false</boolProp>
-            <boolProp name="ResultFileConfiguration.responseDataOnError">false</boolProp>
-            <stringProp name="ResultFileConfiguration.numberFormat"></stringProp>
-            <boolProp name="ResultFileConfiguration.url">true</boolProp>
-            <boolProp name="ResultFileConfiguration.cookies">false</boolProp>
-            <boolProp name="ResultFileConfiguration.threadCounts">true</boolProp>
-            <boolProp name="ResultFileConfiguration.sampleCount">true</boolProp>
-            <boolProp name="ResultFileConfiguration.idleTime">true</boolProp>
-            <boolProp name="ResultFileConfiguration.responseMessage">true</boolProp>
-            <boolProp name="ResultFileConfiguration.responseCode">true</boolProp>
-            <boolProp name="ResultFileConfiguration.label">true</boolProp>
-            <boolProp name="ResultFileConfiguration.hostname">true</boolProp>
-          </elementProp>
+          <elementProp name="ResultCollector.sample_listeners" elementType="resultCollector"/>
+          <stringProp name="filename">tests/jmeter/reports/load_test.jtl</stringProp>
         </ResultCollector>
         <hashTree/>
 
