@@ -171,15 +171,10 @@
 
         <!-- Result Collectors -->
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
-          <objProp>
-            <name>clearEachIteration</name>
-            <value>false</value>
-            <boolProp>false</boolProp>
-          </objProp>
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>samplerListener</name>
             <value>true</value>
-            <boolProp>true</boolProp>
           </objProp>
           <elementProp name="fileConfigurer" elementType="ResultFileConfiguration" guiclass="ResultFileConfigPanel" testclass="ResultFileConfiguration" testname="ResultFileConfiguration" enabled="true">
             <stringProp name="ResultFileConfiguration.filename">tests/jmeter/reports/load_test.jtl</stringProp>
